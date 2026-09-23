@@ -1,3 +1,6 @@
+/* Modified 24 September 2026 by Retro Jack: the cursor keys were added
+   as alternatives to the existing flight controls. See README.md.
+   Original copyright and licence notices below are unchanged. */
 /* Source code for Sopwith 2
    Reverse-engineered by Andrew Jenner
 
@@ -402,11 +405,11 @@ void keybint(void)
     return;
   scancode=inportb(PORT_KEYB);
   switch (scancode&0x7f) {
-    case SC_X:     k=KEY_ACCEL;   break;
-    case SC_Z:     k=KEY_BRAKE;   break;
-    case SC_COMMA: k=KEY_CLIMB;   break;
-    case SC_SLASH: k=KEY_DESCEND; break;
-    case SC_DOT:   k=KEY_FLIP;    break;
+    case SC_X:     case SC_RIGHT: k=KEY_ACCEL;   break;
+    case SC_Z:     case SC_LEFT:  k=KEY_BRAKE;   break;
+    case SC_COMMA: case SC_UP:    k=KEY_CLIMB;   break;
+    case SC_SLASH: case SC_DOWN:  k=KEY_DESCEND; break;
+    case SC_DOT:                  k=KEY_FLIP;    break;
     case SC_SPACE: k=KEY_FIRE;    break;
     case SC_B:     k=KEY_BOMB;    break;
     case SC_H:     k=KEY_HOME;    break;

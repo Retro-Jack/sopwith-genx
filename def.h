@@ -1,3 +1,6 @@
+/* Modified 24 September 2026 by Retro Jack: the cursor keys were added
+   as alternatives to the existing flight controls. See README.md.
+   Original copyright and licence notices below are unchanged. */
 /* Source code for Sopwith
    Reverse-engineered by Andrew Jenner
 
@@ -27,6 +30,13 @@ typedef int bool;
 #define SC_COMMA 0x33
 #define SC_DOT   0x34
 #define SC_SLASH 0x35
+/* Cursor keys, so the plane can be flown without reaching for the
+   punctuation. keybint() masks with 0x7f, so the 0xe0 prefix that the
+   extended keys send falls through to default and does no harm. */
+#define SC_UP    0x48
+#define SC_DOWN  0x50
+#define SC_LEFT  0x4b
+#define SC_RIGHT 0x4d
 #define SC_SPACE 0x39
 #define SC_BREAK 0x46
 
